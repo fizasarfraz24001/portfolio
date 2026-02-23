@@ -20,16 +20,14 @@ export default function Navbar({ isScrolled }: NavbarProps) {
     return (
         <nav
             className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled
-                ? 'glass-effect shadow-lg'
+                ? 'bg-black/90 backdrop-blur-lg shadow-lg'
                 : 'bg-transparent'
                 }`}
         >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between items-center h-16">
                     <div className="flex-shrink-0">
-                        <a href="#home" className="text-2xl font-bold text-gradient">
-                            Fiza Sarfraz
-                        </a>
+
                     </div>
 
                     {/* Desktop Menu */}
@@ -39,12 +37,23 @@ export default function Navbar({ isScrolled }: NavbarProps) {
                                 <a
                                     key={item.name}
                                     href={item.href}
-                                    className="text-gray-300 hover:text-white px-3 py-2 text-sm font-medium transition-colors duration-200"
+                                    className={`px-3 py-2 text-sm font-medium transition-colors duration-200 ${item.name === 'Home'
+                                        ? 'text-purple-500'
+                                        : 'text-gray-300 hover:text-white'
+                                        }`}
                                 >
                                     {item.name}
                                 </a>
                             ))}
                         </div>
+                    </div>
+                    <div className="hidden md:block">
+                        <a
+                            href="#contact"
+                            className="px-6 py-2 bg-purple-500 text-white rounded-lg font-semibold hover:bg-purple-600 transition-colors duration-200"
+                        >
+                            Hire Me
+                        </a>
                     </div>
 
                     {/* Mobile menu button */}
@@ -82,18 +91,30 @@ export default function Navbar({ isScrolled }: NavbarProps) {
 
             {/* Mobile Menu */}
             {isMenuOpen && (
-                <div className="md:hidden glass-effect">
+                <div className="md:hidden bg-black/95 backdrop-blur-lg border-t border-white/10">
                     <div className="px-2 pt-2 pb-3 space-y-1">
                         {navItems.map((item) => (
                             <a
                                 key={item.name}
                                 href={item.href}
                                 onClick={() => setIsMenuOpen(false)}
-                                className="text-gray-300 hover:text-white block px-3 py-2 text-base font-medium"
+                                className={`block px-3 py-2 text-base font-medium ${item.name === 'Home'
+                                    ? 'text-orange-500'
+                                    : 'text-gray-300 hover:text-white'
+                                    }`}
                             >
                                 {item.name}
                             </a>
                         ))}
+                        <a
+                            href="#contact"
+                            onClick={() => setIsMenuOpen(false)}
+                            className="block px-3 py-2 mt-2"
+                        >
+                            <span className="px-6 py-2 bg-purple-500 text-white rounded-lg font-semibold inline-block">
+                                Hire Me
+                            </span>
+                        </a>
                     </div>
                 </div>
             )}
