@@ -38,7 +38,7 @@ export default function Projects() {
     return (
         <section
             id="projects"
-            className="py-20 px-4 sm:px-6 lg:px-8 relative bg-black"
+            className="py-20 px-4 sm:px-6 lg:px-8 relative"
         >
             <div className="max-w-7xl mx-auto">
                 <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">
@@ -89,6 +89,17 @@ export default function Projects() {
                             </div>
                         </div>
                     ))}
+                </div>
+
+                <div className="flex justify-center mt-12">
+                    <a
+                        href="https://github.com/fizasarfraz24001"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="px-8 py-3 bg-purple-500 text-white rounded-lg font-semibold hover:bg-purple-600 hover:shadow-lg hover:shadow-purple-500/50 transition-all duration-300 transform hover:scale-105 border border-purple-500/30"
+                    >
+                        See more projects
+                    </a>
                 </div>
             </div>
         </section>

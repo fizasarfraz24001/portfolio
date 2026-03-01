@@ -10,14 +10,14 @@ export default function Skills() {
         { name: 'HTML5', level: 95 },
         { name: 'CSS3', level: 90 },
         { name: 'Git', level: 80 },
-        { name: 'Vue.js', level: 70 },
+        { name: 'GitHub', level: 85 },
         { name: 'Python', level: 75 },
     ]
 
     return (
         <section
             id="skills"
-            className="py-20 px-4 sm:px-6 lg:px-8 relative bg-black"
+            className="py-20 px-4 sm:px-6 lg:px-8 relative"
         >
             <div className="max-w-7xl mx-auto">
                 <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">
